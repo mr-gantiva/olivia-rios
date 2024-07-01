@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --menu_bg: #373A3C;
+    --white-text:  #FFFFFF;
+    --dark-text: #0F0F0F;
+    --btn-banner: #17A2B8;
+    --border-input: #DDDDDD;
+    --bg-text:#818A91;
+    --btn-hover: #56C0E0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: clamp(1.25rem, 3vw + 0.75rem, 4rem);
+    font-weight: bold;
+}
+h2 {
+    font-size: clamp(1.25rem, 3vw + 0.75rem, 3.25rem);
+    font-weight: 600;
+}
+
+button {
+    border-radius: 4px;
+}
+
+.btn-transparent {
+    border: 1px solid var(--btn-banner);
+    transition: all 0.2s ease-in-out;
+    background-color: transparent;
+    &:hover {
+        border: none;
+        background-color: var(--btn-banner);
+        color: #ffff;
+    }
+}
+
+.btn-azul {
+   background-color: var(--btn-banner); 
+   border: none;
+   transition: all 0.2s ease-in;
+   color: var(--white-text);
+   &:hover {
+    background-color: var(--btn-hover);
+   }
+}
+
+.btn-banner {
+    a {
+        color: var(--white-text);
+    }
+}
+
+.navbar {
+    background-color: var(--menu_bg);
+    .navbar-nav {
+        .nav-link {
+            color: var(--bg-text);
+            font-weight: 400;
+            transition: all 0.5s ease;
+            &:hover {
+                color: var(--white-text);
+                transform: scale(1.1);
+            }
+        }
+        .active {
+            color: var(--white-text);
+        }
+    }
+}
+
+.contenedor-banner {
+    position: relative;
+    background-image: url('/assets/img/bg-hero.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 600px;
+    :is(h1, p) {
+        color: var(--white-text);
+        text-align: right;
+    }
+
+    .box-info-banner {
+        position: absolute;
+        top: 30%;
+        right: 10%;
+        bottom: 0;
+    }
+
+}
+
+.about-header {
+    i {
+        font-size: 4rem;
+    }
+}
+
+.contenedor-mis-trabajos {
+    background-color: var(--btn-banner);
+    h2 {
+        color: var(--white-text);
+    }
+    .card {
+        border-radius: 4px;
+        .box-img {
+            overflow: hidden;
+            height: 250px;
+            img {
+                height: 100%;
+                object-fit: cover;
+                transition: all 0.5s ease;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .card-body {
+            a {
+                color: var(--btn-banner);
+                &:hover {
+                    color: var(--white-text);
+                }
+            }
+        }
+    }
+}
+
+
+@media (300px <= width <= 540px) {
+    .contenedor-banner {
+        background-image: url('/assets/img/bg-hero-mobile.jpg');
+        .box-info-banner {
+            right: 0;
+        }
+    }
+}
